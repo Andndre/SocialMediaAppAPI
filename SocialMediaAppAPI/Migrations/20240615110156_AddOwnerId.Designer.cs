@@ -11,8 +11,8 @@ using SocialMediaAppAPI.Data;
 namespace SocialMediaAppAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240615072718_IniialCreate")]
-    partial class IniialCreate
+    [Migration("20240615110156_AddOwnerId")]
+    partial class AddOwnerId
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -108,7 +108,7 @@ namespace SocialMediaAppAPI.Migrations
                     b.HasOne("SocialMediaAppAPI.Models.User", "User")
                         .WithMany("UserLikedPosts")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Post");

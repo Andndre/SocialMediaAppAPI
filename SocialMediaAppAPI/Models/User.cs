@@ -1,4 +1,7 @@
-﻿namespace SocialMediaAppAPI.Models
+﻿using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
+
+namespace SocialMediaAppAPI.Models
 {
     public class User
     {
